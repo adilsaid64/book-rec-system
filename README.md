@@ -15,7 +15,11 @@ These user profiles are then used to generate personalized book recommendations 
 
 The system was then deployed onto a web application using Flask. You can run the app.py file and access it by typing http://localhost:5000/ into a web browser.
 
+**Home Page**
 ![image](/screenshots/1home.png)
+
+**Search Engine**
+![image](/screenshots/2search.png)
 
 
 ## Data
