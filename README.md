@@ -1,10 +1,5 @@
 # Generate Personalized Reading Recommendations from a Book Dataset
 
-By Adil Said
-- email: adilsaid64@gmail.com
-- github: https://github.com/adilsaid64
-- linkedin: https://www.linkedin.com/in/adil-s64/
-
 **Task:** You have been given a dataset containing information about various books,
 including the title, author, genre, and a brief summary. Your task is to develop a simple
 but creative recommendation system using Python to provide personalized reading
