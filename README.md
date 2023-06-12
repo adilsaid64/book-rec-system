@@ -28,7 +28,7 @@ The system was then deployed onto a web application using Flask. You can run the
 ![image](/screenshots/5bookreco.png)
 
 
-## Data
+# Data
 Data was from kaggle [goodbooks-10k](https://www.kaggle.com/datasets/zygmunt/goodbooks-10k?select=books.csv).
 
 Contains data on 10k books and 10k users with almost a million rows of user interactions.
