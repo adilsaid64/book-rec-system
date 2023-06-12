@@ -21,6 +21,12 @@ The system was then deployed onto a web application using Flask. You can run the
 **Search Engine**
 ![image](/screenshots/2search.png)
 
+**User Profile of Liked Books**
+![image](/screenshots/4userbooks.png)
+
+**Book Recommendations**
+![image](/screenshots/5bookreco.png)
+
 
 ## Data
 Data was from kaggle [goodbooks-10k](https://www.kaggle.com/datasets/zygmunt/goodbooks-10k?select=books.csv).
