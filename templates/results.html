@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        img {
+            max-width: 50px;
+            height: auto;
+        }
+        
+        form {
+            display: inline-block;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+    <h2>Rate atleast 5 books you like!</h2>
+
+    <a class="button" href="/recommend">Get Book Recommendations</a>
+    <a class="button" href="/">Search Again</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Authors</th>
+                <th>Title</th>
+                <th>Average Rating</th>
+                <th>Cover Image</th>
+                <th>Similarity</th>
+                <th>Book ID</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in results.iterrows() %}
+            <tr>
+                <td>{{ row['authors'] }}</td>
+                <td>{{ row['original_title'] }}</td>
+                <td>{{ row['average_rating'] }}</td>
+                <td><img src="{{ row['image_url'] }}"></td>
+                <td>{{ row['similarity'] }}</td>
+                <td>{{ row['id'] }}</td>
+                <td>
+                    {% if row['id'] in my_book_ids %}
+                        {{ my_books.loc[my_books['book_id'] == row['id'], 'rating'].values[0] }}
+                    {% else %}
+                        <form action="/rate" method="post">
+                            <input type="hidden" name="book_id" value="{{ row['id'] }}">
+                            <select name="rating">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <input type="submit" value="Rate">
+                        </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

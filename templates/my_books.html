@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Books</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Book Ratings</h1>
+    <h2>The books you rated so far. Rate atleast 5 books.</h2>
+    <a class="button" href="/recommend">Get Book Recommendations</a>
+    <button class="button" onclick="goBack()">Go Back To Rate More Books</button>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Book ID</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in my_books.iterrows() %}
+            <tr>
+                <td>{{ row['user_id'] }}</td>
+                <td>{{ row['book_id'] }}</td>
+                <td>{{ row['rating'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

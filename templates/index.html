@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        input[type="text"],
+        input[type="submit"] {
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Search</h1>
+    <p>Search for an author or a book you like.</p>
+    <p>Rate atleast 5 books you like to get some book recommendations. The more the better.</p>
+    <p>By Adil Said<p>
+    <p>Find me:</p>
+    <a href="https://github.com/adilsaid64">GitHub</a>
+    <a href="https://www.linkedin.com/in/adil-s64/">LinkedIn</a>
+    <form method="GET" action="/search">
+        <input type="text" name="query" placeholder="Enter your search query">
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
